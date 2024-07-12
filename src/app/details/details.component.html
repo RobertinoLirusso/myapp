@@ -1,0 +1,18 @@
+<a class="back-button" [routerLink]="['/']">
+  <i class="fas fa-arrow-left"></i>  Back
+</a>
+<article>
+    <img class="listing-photo" [src]="clubList?.badge"
+      alt="Exterior photo of {{clubList?.name}}"/>
+    <section class="listing-description">
+      <h2 class="listing-heading">{{clubList?.name}}</h2>
+      <p class="listing-location">{{clubList?.city}}, {{clubList?.country}}</p>
+    </section>
+    <section class="listing-features">
+      <h2 class="section-heading">About this club</h2>
+      <ul>
+        <li>Year of Foundation: {{clubList?.founded}}</li>
+        <li>Stadium: {{clubList?.stadium}}</li>
+      </ul>
+    </section>
+  </article>

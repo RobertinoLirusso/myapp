@@ -1,0 +1,28 @@
+.form-row {
+    display: flex;
+    gap: 16px; /* Espacio entre los campos en una fila */
+    margin-bottom: 16px; /* Espacio entre las filas */
+  }
+  
+  .form-field {
+    flex: 1;
+  }
+  
+  .single-field .form-field {
+    width: 100%; /* Ocupa toda la fila */
+  }
+  
+  mat-dialog-content {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  mat-dialog-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 16px;
+  }
+  
+  button {
+    margin-left: 8px;
+  }

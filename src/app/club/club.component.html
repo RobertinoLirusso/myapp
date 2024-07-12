@@ -1,0 +1,12 @@
+<section>
+    <form (submit)="onSubmit($event)">
+        <input type="text" name="filter" placeholder="Search a club" #filter>
+        <button type="submit" (click)="filterResults(filter.value)">
+            <i class="fas fa-search"></i>
+        </button>
+    </form>
+    <section class="content">
+        <app-content *ngFor="let clubList of filteredClubList" [clubList]="clubList"></app-content>
+    </section>
+    <p *ngIf="filteredClubList.length === 0 && filter.value" class="not-found">Club Not Found</p>
+</section>

@@ -1,0 +1,47 @@
+.card {
+  position: relative; /* Necesario para posicionar el enlace */
+  width: 120px; /* Ajusta según el tamaño deseado */
+  height: 120px; /* Ajusta según el tamaño deseado */
+  border-radius: 15px; /* Añade el borde redondeado */
+  padding: 10px;
+  overflow: hidden; /* Asegura que el contenido se mantenga dentro del borde redondeado */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Añade una transición suave */
+}
+
+.card-image {
+  width: 120px;
+  height: 120px;
+  object-fit: cover; /* Asegura que la imagen cubra toda la tarjeta */
+}
+
+.card-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-indent: -9999px; /* Mueve el texto fuera de la vista */
+  background-color: rgba(0, 0, 0, 0); /* Hace que el fondo sea transparente */
+}
+
+.card-name {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  background-color: rgba(53, 53, 53, 0.7); /* Fondo semitransparente */
+  padding: 3px 8px;
+  border-radius: 5px;
+  opacity: 0; /* Invisible inicialmente */
+  transition: opacity 0.3s ease; /* Transición suave para el hover */
+}
+
+.card:hover {
+  transform: scale(1.05); /* Aumenta el tamaño en el hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Añade una sombra en el hover */
+}
+
+.card:hover .card-name {
+  opacity: 1; /* Hace visible el nombre del equipo al hacer hover */
+}

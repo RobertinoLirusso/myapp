@@ -1,0 +1,60 @@
+article {
+    border: 2px solid #ccc; /* Borde sólido con color gris claro */
+    border-radius: 15px; /* Borde redondeado */
+    padding: 20px; /* Espaciado interno */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera para efecto de profundidad */
+    max-width: 600px; /* Ancho máximo del artículo */
+    margin: 20px auto; /* Centrar el artículo en la página */
+  }
+  
+  .listing-photo {
+    max-width: 100%; /* Asegurar que la imagen no exceda el ancho del contenedor */
+  }
+  
+  .listing-description, .listing-features {
+    margin-top: 20px; /* Espaciado entre secciones */
+  }
+  
+  .listing-heading {
+    font-size: 2.0em; /* Tamaño de fuente para el encabezado */
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-bottom: 10px; /* Espaciado debajo del encabezado */
+  }
+  
+  .listing-location {
+    font-size: 15px;
+    color: black; /* Color de texto para la ubicación */
+  }
+  
+  .section-heading {
+    font-size: 1.5em; /* Tamaño de fuente para el encabezado */
+    font-weight: 400;
+    text-transform: uppercase;
+    margin-bottom: 10px; /* Espaciado debajo del encabezado */
+  }
+  
+  .listing-features ul {
+    list-style-type: none; /* Eliminar viñetas de la lista */
+    padding: 0; /* Eliminar espaciado interno de la lista */
+  }
+  
+  .listing-features li {
+    font-size: 15px;
+    margin-bottom: 10px; /* Espaciado entre elementos de la lista */
+  }
+
+  .back-button {
+    display: inline-block;
+    text-decoration: none;
+    color: black; /* Cambia esto al color que prefieras */
+    font-size: 18px; /* Ajusta el tamaño según tus necesidades */
+    cursor: pointer; /* Añade un puntero al pasar el mouse */
+    border-radius: 8px; /* Ajusta el valor según tus necesidades */
+    padding: 10px; /* Añade padding para que el borde redondeado se vea mejor */
+    border: 1px solid rgb(204, 204, 204); /* Añade un borde para que se vea el radio */
+}
+
+.back-button:hover {
+    text-decoration: underline;
+}

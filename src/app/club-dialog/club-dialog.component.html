@@ -1,0 +1,35 @@
+<h1 mat-dialog-title>{{ data.id ? 'Edit Club' : 'Create New Club' }}</h1>
+<div mat-dialog-content>
+  <form>
+    <div class="form-row">
+      <mat-form-field class="form-field">
+        <input matInput placeholder="Club Name" [(ngModel)]="data.name" name="name" required>
+      </mat-form-field>
+      <mat-form-field class="form-field">
+        <input matInput placeholder="City" [(ngModel)]="data.city" name="city" required>
+      </mat-form-field>
+    </div>
+    <div class="form-row">
+      <mat-form-field class="form-field">
+        <input matInput placeholder="Country" [(ngModel)]="data.country" name="country" required>
+      </mat-form-field>
+      <mat-form-field class="form-field">
+        <input matInput placeholder="Year Of Foundation" [(ngModel)]="data.founded" name="founded">
+      </mat-form-field>
+    </div>
+    <div class="form-row single-field">
+      <mat-form-field class="form-field">
+        <input matInput placeholder="URL Badge" [(ngModel)]="data.badge" name="badge">
+      </mat-form-field>
+    </div>
+    <div class="form-row">
+      <mat-form-field class="form-field">
+        <input matInput placeholder="Stadium" [(ngModel)]="data.stadium" name="stadium" required>
+      </mat-form-field>
+    </div>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onCancelClick()">Cancel</button>
+  <button mat-button color="primary" [disabled]="!data.name || !data.city || !data.country || !data.stadium" (click)="onSaveClick()">Save</button>
+</div>

@@ -1,0 +1,5 @@
+<section class="card">
+  <img class="card-image" [src]="clubList.badge" alt="Exterior photo of {{clubList.name}}">
+  <a [routerLink]="['/details', clubList.id]" class="card-link"></a>
+  <div class="card-name">{{clubList.name}}</div>
+</section>

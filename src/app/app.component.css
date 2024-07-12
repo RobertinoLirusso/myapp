@@ -1,0 +1,50 @@
+.root {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    min-height: 100%;
+}
+
+.header {
+    text-align: center;
+    padding: 10px;
+    background-color: black;
+}
+
+.header a{
+    font-size: 25px;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+    color: white;
+    font-weight: 400;
+    text-decoration: none;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: uppercase;
+}
+
+.architects-daughter-regular {
+    font-family: "Architects Daughter", cursive;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+
+.main-container {
+    flex: 1;
+    text-align: center;
+    padding: 16px;
+}
+
+.footer {
+    text-align: center;
+    color: white;
+    background-color: black;
+    padding: 16px;
+    font-size: 13px;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
