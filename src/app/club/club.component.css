@@ -40,3 +40,13 @@ button:hover {
     font-style:normal; 
     font-size: 20px; 
 }
+
+.section-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 10px; /* Espacio inferior para separar del contenido */
+}
+
+#letterFilter {
+    margin-left: 10px; /* Espacio a la izquierda para separar del texto */
+}

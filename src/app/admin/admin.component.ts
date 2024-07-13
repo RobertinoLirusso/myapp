@@ -65,6 +65,12 @@ export class AdminComponent implements OnInit {
   createClub(club: Club): void {
     this.clubService.createClub(club).subscribe(newClub => {
       this.clubs.push(newClub);
+      Swal.fire({
+        title: 'Success!',
+        text: 'The club has been created successfully.',
+        icon: 'success',
+        confirmButtonText: 'OK'
+      });
     });
   }
 
@@ -73,6 +79,12 @@ export class AdminComponent implements OnInit {
       const index = this.clubs.findIndex(c => c.id === club.id);
       if (index !== -1) {
         this.clubs[index] = updatedClub;
+        Swal.fire({
+          title: 'Success!',
+          text: 'The club has been updated successfully.',
+          icon: 'success',
+          confirmButtonText: 'OK'
+        });
       }
     });
   }

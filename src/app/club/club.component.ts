@@ -15,24 +15,8 @@ export class ClubComponent implements OnInit {
 
   clubList: Club[] = []
   filteredClubList: Club[] = [];
+  letters: string[] = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
   clubListService: ClubService = inject(ClubService);
-
-  filterResults(text: string) {
-    if (!text) {
-      this.filteredClubList = this.clubList;
-      return;
-    }
-  
-    this.filteredClubList = this.clubList.filter(
-      clubContent => clubContent?.name.toLowerCase().includes(text.toLowerCase())
-    );
-  }
-
-  onSubmit(event: Event) {
-    event.preventDefault();
-    const inputElement = (event.target as HTMLFormElement).elements.namedItem('filter') as HTMLInputElement;
-    this.filterResults(inputElement?.value || '');
-  }
 
   constructor(private clubService: ClubService) {}
 
@@ -46,5 +30,38 @@ export class ClubComponent implements OnInit {
       this.filteredClubList = this.clubList;
     })
   }
+
+  filterResults(text: string) {
+    let filtered = this.clubList;
+
+    if (text) {
+      filtered = filtered.filter(
+        clubContent => clubContent?.name.toLowerCase().includes(text.toLowerCase())
+      );
+    }
+
+    this.filteredClubList = filtered;
+  }
+
+  filterByLetter(event: Event) {
+    const selectedLetter = (event.target as HTMLSelectElement).value;
+
+    if (!selectedLetter) {
+      this.filteredClubList = this.clubList;
+      return;
+    }
+
+    this.filteredClubList = this.clubList.filter(
+      clubContent => clubContent?.name.startsWith(selectedLetter)
+    );
+  }
+
+
+  onSubmit(event: Event) {
+    event.preventDefault();
+    const inputElement = (event.target as HTMLFormElement).elements.namedItem('filter') as HTMLInputElement;
+    this.filterResults(inputElement?.value || '');
+  }
+
   
 }

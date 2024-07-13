@@ -22,10 +22,6 @@
   font-size: 18px; /* Ajusta el tamaño según tus necesidades */
 }
 
-.small-icon {
-  font-size: 18px; /* Ajusta el tamaño según tus necesidades */
-}
-
 .logout-button {
   background-color: #ffffff; /* Color de fondo rojo */
   color: rgb(0, 0, 0); /* Color de texto blanco */
@@ -34,8 +30,32 @@
   border-radius: 4px;
   cursor: pointer;
   margin-top: 16px; /* Añadir margen superior si es necesario */
+  font-family: "Architects Daughter", cursive;
 }
 
 .logout-button:hover {
   background-color: #fd7200; /* Color de fondo más oscuro al pasar el ratón */
+}
+
+.add-club-button {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  color: black;
+  padding: 8px 16px;
+  margin-bottom: 10px;
+  border: 1px solid black;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: "Architects Daughter", cursive;
+}
+
+.add-club-button .add-icon {
+  margin-right: 8px;
+  font-size: 20px;
+}
+
+.add-club-button:hover {
+  background-color:aliceblue;
 }

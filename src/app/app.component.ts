@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { RouterModule, RouterOutlet } from '@angular/router';
 import { AngularMaterialModule } from '../angular-material-module';
 import { ClubComponent } from './club/club.component';
@@ -12,4 +12,20 @@ import { ClubComponent } from './club/club.component';
 })
 export class AppComponent {
   title = 'myapp';
+
+  @HostListener('window:scroll', []) 
+  onWindowScroll() {
+    const button = document.getElementById('backToTop');
+    if (button) {
+      if (window.scrollY > 300) {
+        button.style.display = 'block';
+      } else {
+        button.style.display = 'none';
+      }
+    }
+  }
+
+  scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 }

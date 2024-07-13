@@ -5,6 +5,13 @@
             <i class="fas fa-search"></i>
         </button>
     </form>
+    <div class="section-container">
+        <label for="letterFilter">Filter by First Letter:</label>
+        <select id="letterFilter" (change)="filterByLetter($event)">
+            <option value="">All</option>
+            <option *ngFor="let letter of letters" [value]="letter">{{ letter }}</option>
+        </select>
+    </div>
     <section class="content">
         <app-content *ngFor="let clubList of filteredClubList" [clubList]="clubList"></app-content>
     </section>
