@@ -8,7 +8,8 @@ article {
   }
   
   .listing-photo {
-    max-width: 100%; /* Asegurar que la imagen no exceda el ancho del contenedor */
+    width: 120px;
+    height: 120px;
   }
   
   .listing-description, .listing-features {
