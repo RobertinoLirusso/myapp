@@ -48,5 +48,10 @@ button:hover {
 }
 
 #letterFilter {
-    margin-left: 10px; /* Espacio a la izquierda para separar del texto */
+    margin-left: 8px; /* Espacio a la izquierda para separar del texto */
+    margin-right: 15px;
+}
+
+#countryFilter {
+    margin-left: 8px; /* Espacio a la izquierda para separar del texto */
 }

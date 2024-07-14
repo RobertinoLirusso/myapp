@@ -11,6 +11,12 @@
             <option value="">All</option>
             <option *ngFor="let letter of letters" [value]="letter">{{ letter }}</option>
         </select>
+
+        <label for="countryFilter">Filter by Country:</label>
+        <select id="countryFilter" (change)="filterByCountry($event)">
+            <option value="">All</option>
+            <option *ngFor="let country of countries" [value]="country.name">{{ country.name }}</option>
+        </select>
     </div>
     <section class="content">
         <app-content *ngFor="let clubList of filteredClubList" [clubList]="clubList"></app-content>

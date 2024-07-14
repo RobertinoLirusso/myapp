@@ -3,6 +3,7 @@ import { Component, inject, OnInit } from '@angular/core';
 import { ContentComponent } from '../content/content.component';
 import { Club } from '../club'
 import { ClubService } from '../club.service';
+import { countryList } from './countries';
 
 @Component({
   selector: 'app-club',
@@ -16,6 +17,7 @@ export class ClubComponent implements OnInit {
   clubList: Club[] = []
   filteredClubList: Club[] = [];
   letters: string[] = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+  countries = countryList;
   clubListService: ClubService = inject(ClubService);
 
   constructor(private clubService: ClubService) {}
@@ -53,6 +55,19 @@ export class ClubComponent implements OnInit {
 
     this.filteredClubList = this.clubList.filter(
       clubContent => clubContent?.name.startsWith(selectedLetter)
+    );
+  }
+
+  filterByCountry(event: Event) {
+    const selectedCountry = (event.target as HTMLSelectElement).value;
+
+    if (!selectedCountry) {
+      this.filteredClubList = this.clubList;
+      return;
+    }
+
+    this.filteredClubList = this.clubList.filter(
+      clubContent => clubContent?.country === selectedCountry
     );
   }
 
