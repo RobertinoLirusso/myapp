@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
@@ -8,6 +8,8 @@ import { AuthService } from '../auth.service';
 import { Club } from '../club';
 import { ClubDialogComponent } from '../club-dialog/club-dialog.component';
 import { ClubService } from '../club.service';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatTableDataSource } from '@angular/material/table';
 
 
 @Component({
@@ -22,7 +24,15 @@ import { ClubService } from '../club.service';
 })
 export class AdminComponent implements OnInit {
 
-  clubs: Club[]= []
+  
+  displayedColumns: string[] = ['name', 'city', 'country', 'founded', 'stadium', 'actions'];
+  dataSource = new MatTableDataSource<Club>([]);
+  clubs: Club[]= [];
+  filteredClubs: Club[] = [];
+  searchText: string = '';
+
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+
 
   constructor(
     private dialog: MatDialog,
@@ -43,7 +53,22 @@ export class AdminComponent implements OnInit {
   loadClubs(): void {
     this.clubService.getAllClubs().subscribe(clubs => {
       this.clubs = clubs;
+      this.filteredClubs = clubs;
+      this.dataSource.data = this.filteredClubs;
+      this.dataSource.paginator = this.paginator;
     });
+  }
+
+  filterClubs(): void {
+    this.filteredClubs = this.clubs.filter(club => 
+      club.name.toLowerCase().includes(this.searchText.toLowerCase()) ||
+      club.city.toLowerCase().includes(this.searchText.toLowerCase()) ||
+      club.country.toLowerCase().includes(this.searchText.toLowerCase()) ||
+      club.founded.toString().includes(this.searchText) ||
+      club.stadium.toLowerCase().includes(this.searchText.toLowerCase())
+    );
+    this.dataSource.data = this.filteredClubs;
+    this.dataSource.paginator = this.paginator;
   }
 
   openDialog(club?: Club): void {

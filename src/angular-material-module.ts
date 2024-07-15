@@ -7,6 +7,7 @@ import { MatInputModule } from '@angular/material/input';
 import {MatDialogModule} from '@angular/material/dialog';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { FormsModule } from '@angular/forms';
+import { MatPaginator } from '@angular/material/paginator';
 
 
 const materialModules = [
@@ -15,7 +16,9 @@ const materialModules = [
   MatFormFieldModule,
   MatInputModule,
   MatDialogModule,
-  FormsModule
+  FormsModule,
+  MatTableModule,
+  MatPaginator,
 ];
 
 @NgModule({

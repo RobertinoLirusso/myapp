@@ -1,45 +1,11 @@
-.table {
-  width: 100%;
-  border-collapse: collapse;
-  background-color: #333; /* Color de fondo oscuro */
-  color: white; /* Color de texto blanco */
-}
-
-.table th, .table td {
-  border: 1px solid #ddd;
-  padding: 8px;
-  text-align: left;
-  text-transform: uppercase;
-  font-size: 14px;
-  font-weight: bold;
-}
-
-.table th {
-  background-color: #555; /* Color de fondo más oscuro para las cabeceras */
-}
-
-.small-icon {
-  font-size: 18px; /* Ajusta el tamaño según tus necesidades */
-}
-
-.logout-button {
-  background-color: #ffffff; /* Color de fondo rojo */
-  color: rgb(0, 0, 0); /* Color de texto blanco */
-  padding: 8px 16px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  margin-top: 16px; /* Añadir margen superior si es necesario */
-  font-family: "Architects Daughter", cursive;
-}
-
-.logout-button:hover {
-  background-color: #fd7200; /* Color de fondo más oscuro al pasar el ratón */
+.add-club-container {
+  display: flex;
+  align-items: center; /* Alinear elementos verticalmente */
+  justify-content: space-between; /* Espacio entre elementos */
+  flex-wrap: wrap; /* Envolver elementos si no caben en una línea */
 }
 
 .add-club-button {
-  display: flex;
-  align-items: center;
   font-size: 16px;
   color: black;
   padding: 8px 16px;
@@ -57,5 +23,66 @@
 }
 
 .add-club-button:hover {
-  background-color:aliceblue;
+  background-color: azure;
+}
+
+.search-container {
+  margin-bottom: 20px;
+}
+
+.search-container input {
+  padding: 5px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  color: #333;
+}
+
+.table-container {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0;
+}
+
+.table {
+  font-family: Arial, Helvetica, sans-serif;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.mat-paginator {
+  align-self: center;
+}
+
+.small-icon {
+  font-size: 18px;
+}
+
+.logout-button {
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 16px;
+  text-transform: uppercase;
+  font-size: 15px;
+  font-family: "Architects Daughter", cursive;
+}
+
+.logout-button:hover {
+  background-color:azure;
+}
+
+
+.logout-button mat-icon {
+  margin-right: 8px; /* Ajusta este valor según sea necesario */
+}
+
+h2{
+  font-size: large;
+  font-weight: bold;
+  text-transform: uppercase;
 }

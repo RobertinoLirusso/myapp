@@ -1,17 +1,30 @@
 .form-row {
-    display: flex;
-    gap: 16px; /* Espacio entre los campos en una fila */
-    margin-bottom: 16px; /* Espacio entre las filas */
-  }
-  
-  .form-field {
-    flex: 1;
-  }
-  
-  .single-field .form-field {
-    width: 100%; /* Ocupa toda la fila */
-  }
-  
+  display: flex;
+  gap: 16px; /* Espacio entre los campos en una fila */
+  margin-bottom: 16px; /* Espacio entre las filas */
+}
+
+.form-field {
+  flex: 1;
+}
+
+.single-field .form-field {
+  width: 100%; /* Ocupa toda la fila */
+}
+
+mat-form-field {
+  border-radius: 8px; /* Borde redondeado */
+  overflow: hidden; /* Para asegurar que el borde redondeado funcione correctamente */
+}
+
+
+mat-input-element {
+  border-radius: inherit; /* Hereda el borde redondeado */
+  padding: 8px; /* Añade un poco de relleno */
+  box-shadow: inherit; /* Hereda la sombra */
+}
+
+
   mat-dialog-content {
     display: flex;
     flex-direction: column;
@@ -21,6 +34,11 @@
     display: flex;
     justify-content: flex-end;
     margin-top: 16px;
+  }
+
+  h1 {
+    text-transform:uppercase;
+    font-weight: bold;
   }
   
   button {
