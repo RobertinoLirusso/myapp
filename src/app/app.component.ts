@@ -2,6 +2,8 @@ import { Component, HostListener } from '@angular/core';
 import { RouterModule, RouterOutlet } from '@angular/router';
 import { AngularMaterialModule } from '../angular-material-module';
 import { ClubComponent } from './club/club.component';
+import { Club } from './club';
+import { ClubService } from './club.service';
 
 @Component({
   selector: 'app-root',
@@ -12,6 +14,8 @@ import { ClubComponent } from './club/club.component';
 })
 export class AppComponent {
   title = 'myapp';
+
+  constructor() {}
 
   @HostListener('window:scroll', []) 
   onWindowScroll() {
@@ -28,4 +32,6 @@ export class AppComponent {
   scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
+  
+
 }
