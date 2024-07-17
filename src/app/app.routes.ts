@@ -19,12 +19,12 @@ export const routes: Routes = [
     {
         path: 'login',
         component: LoginComponent,
-        title: 'Admin',
+        title: 'Login',
     },
     {
         path: 'admin',
         component: AdminComponent,
         canActivate: [authGuard],
-        title: 'Control Panel'
+        title: 'Club Management'
     }
 ];
