@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, tap } from 'rxjs';
-import { environment } from '../environment';
+import { environmentAuth } from '../environment-auth';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +9,7 @@ import { environment } from '../environment';
 export class AuthService {
 
   private AUTH_URL = 'http://localhost:3000/auth';
-  private AuthURL = environment.apiUrl
+  private AuthURL = environmentAuth.authURL
 
   constructor(private http: HttpClient) { }
 
