@@ -67,4 +67,54 @@
   .back-to-top:hover {
     background-color: #555;
   }
-  
+
+
+  @media (max-width: 768px) {
+    .header {
+        padding: 10px;
+    }
+
+    .header a {
+        font-size: 20px;
+    }
+
+    .main-container {
+        padding: 8px;
+    }
+
+    .footer {
+        padding: 10px;
+        font-size: 11px;
+    }
+
+    .back-to-top {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 8px;
+    }
+
+    .header a {
+        font-size: 18px;
+    }
+
+    .main-container {
+        padding: 4px;
+    }
+
+    .footer {
+        padding: 8px;
+        font-size: 10px;
+    }
+
+    .back-to-top {
+        width: 30px;
+        height: 30px;
+        font-size: 16px;
+    }
+}
