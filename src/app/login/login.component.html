@@ -1,12 +1,12 @@
-<form (submit)="login()">
-    <label>
-      Username:
-      <input type="text" [(ngModel)]="username" name="username" required>
-    </label>
-    <label>
-      Password:
-      <input type="password" [(ngModel)]="password" name="password" required>
-    </label>
-    <button type="submit">Login</button>
-    <div *ngIf="errorMessage">{{ errorMessage }}</div>
-  </form>
+<form (submit)="login()" class="login-form">
+  <label>
+    Username:
+    <input type="text" [(ngModel)]="username" name="username" required>
+  </label>
+  <label>
+    Password:
+    <input type="password" [(ngModel)]="password" name="password" required>
+  </label>
+  <button type="submit">Login</button>
+  <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+</form>

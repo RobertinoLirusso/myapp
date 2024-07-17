@@ -22,4 +22,5 @@
         <app-content *ngFor="let clubList of filteredClubList" [clubList]="clubList"></app-content>
     </section>
     <p *ngIf="filteredClubList.length === 0 && filter.value" class="not-found">Club Not Found</p>
+    <p *ngIf="filteredClubList.length === 0 && !filter.value" class="not-found">No clubs</p>
 </section>

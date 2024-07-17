@@ -2,8 +2,7 @@ import { Component, HostListener } from '@angular/core';
 import { RouterModule, RouterOutlet } from '@angular/router';
 import { AngularMaterialModule } from '../angular-material-module';
 import { ClubComponent } from './club/club.component';
-import { Club } from './club';
-import { ClubService } from './club.service';
+
 
 @Component({
   selector: 'app-root',
