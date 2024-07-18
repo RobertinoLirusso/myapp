@@ -32,7 +32,7 @@ export class ClubService {
   }
 
   deleteClub(id: number): Observable<void> {
-    return this.http.delete<void>(`${this.API_URL}remove/${id}`);
+    return this.http.delete<void>(`${this.API_URL}delete/${id}`);
   }
 
 }
