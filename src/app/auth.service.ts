@@ -9,12 +9,12 @@ import { environmentAuth } from '../environment-auth';
 export class AuthService {
 
   private AUTH_URL = 'http://localhost:3000/auth';
-  private AuthURL = environmentAuth.authURL
+  //private AuthURL = environmentAuth.authURL
 
   constructor(private http: HttpClient) { }
 
   login(username: string, password: string): Observable<any> {
-    return this.http.post<any>(`${this.AuthURL}/login`, { username, password }).pipe(
+    return this.http.post<any>(`${this.AUTH_URL}/login`, { username, password }).pipe(
       tap(response => {
         if (response.access_token && isLocalStorageAvailable()) {
           localStorage.setItem('access_token', response.access_token);
@@ -31,7 +31,7 @@ export class AuthService {
         headers = headers.set('Authorization', `Bearer ${token}`);
       }
     }
-    return this.http.get<any>(`${this.AuthURL}/user-info`, { headers });
+    return this.http.get<any>(`${this.AUTH_URL}/user-info`, { headers });
   }
 
   logout(): void {

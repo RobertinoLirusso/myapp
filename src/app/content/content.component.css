@@ -9,6 +9,7 @@
 }
 
 .card-image {
+  display: grid;
   width: 120px;
   height: 120px;
   object-fit: contain; /* Asegura que la imagen cubra toda la tarjeta */

@@ -127,6 +127,7 @@ export class AdminComponent implements OnInit {
       if (result.isConfirmed) {
         this.clubService.deleteClub(id).subscribe(() => {
           this.clubs = this.clubs.filter(club => club.id !== id);
+          this.updateDataSource();
           Swal.fire(
             'Deleted!',
             'Your club has been deleted.',
@@ -135,6 +136,12 @@ export class AdminComponent implements OnInit {
         });
       }
     });
+  }
+
+  updateDataSource(): void {
+    this.filteredClubs = this.clubs;
+    this.dataSource.data = this.filteredClubs;
+    this.dataSource.paginator = this.paginator;
   }
 
 }
